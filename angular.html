@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="tr">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="angular.css">
+ 
+    <title>ANGULAR DİRECTİVE!</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <nav class="navbar bg-info  navbar-expand-lg text-white ">
+    <div class="container">
+        <h1 href="" class="navbar-brand ">ANGULAR DİRECTİVE</h1>
+    </div>
+  </nav>
+   
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 bg-secondary text-center fs-5 text-white">
+                <h2>ANGULAR DİRECTİVE NEDİR?</h2>
+                 Angular’da directive’ler DOM(Document Object Model) nesnelerini manipule etmek için kullanılır.
+                 Angular Directive’lerini kullanarak bir DOM nesnesinin görünümü, 
+                 davranışını veya layout’unu değiştirebilmemiz mümkün.Yani bir kullanıcının sitenin kodlarına erişmekle uğraşmadan direk nesneleri,görünümleri değiştirebilir.
+                 Ayrıca HTML’i genişletmemize de yardımcı olur. <br><br>Directive ‘ler Angular projesi içinde @Directive decoratore yardımıyla oluşturulan javascript class’larıdır.
+                <br> 
+            </div>
+
+        </div>
+    </div>     
+    <div class="container">
+      <div class="row">
+          <div class="col-md-12 bg-warning text-center fs-5 text-white opacity=50%">
+            <h2>UYARI</h2>
+              Başlamadan önce html,css,javascript biliyor olmanız gerekir 
+               
+          </div>
+
+      </div>
+  </div>     
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12 bg-dark fs-5 text-white">
+          <h2 align="center">Built-in directives</h2>
+         <p align="center">Directive ‘ler nasıl davradıklarına göre 3 başlıkta sınıflandırılır:</p>
+          <table>
+            <tr>
+              <th align="left">
+                <font style="veritical-aligan: inherit">
+                  <font style="veritical-aligan: inherit">DİREKTİF TÜRLERİ
+                  </font>
+                </font>
+              </th>
+              <th align="left">
+                <font style="veritical-aligan: inherit">
+                  <font style="veritical-aligan: inherit">	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;Detaylar
+                  </font>
+                </font>
+              </th>
+            </tr>
+            
+              <tr>
+                <td align="left">
+                  <font style="veritical-aligan: inherit">
+                    <font style="veritical-aligan: inherit">Components:
+                    </font>
+                  </font>
+                </td>
+                <td>
+                  <font style="veritical-aligan: inherit">
+                    <font style="veritical-aligan: inherit">	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;Şablonla kullanılır. Bu direktif türü en yaygın direktif türüdür.
+                    </font>
+                  </font>
+                </td>
+              </tr>
+              <tr>
+                <td align="left">
+                  <font style="veritical-aligan: inherit">
+                    <font style="veritical-aligan: inherit">Attribute directives:
+                    </font>
+                  </font>
+                </td>
+                <td>
+                  <font style="veritical-aligan: inherit">
+                    <font style="veritical-aligan: inherit">	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;Bir öğenin, bileşenin veya başka bir direktifin görünümünü veya davranışını değiştirin.
+                    </font>
+                  </font>
+                </td>
+              </tr>
+              <tr>
+                <td align="left">
+                  <font style="veritical-aligan: inherit">
+                    <font style="veritical-aligan: inherit">Structural directives:
+                    </font>
+                  </font>
+                </td>
+                <td>
+                  <font style="veritical-aligan: inherit">
+                    <font style="veritical-aligan: inherit">	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;DOM öğelerini ekleyip kaldırarak DOM düzenini değiştirin.
+                    </font>
+                  </font>
+                </td>
+              </tr>
+            
+          </table>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+        <div class="row">
+            <div class="col-md-12 bg-secondary text-center fs-5 text-white">
+              <img src="ortakdirektif.png"  border="0" align="right"/>  
+              Nitelik direktifleri, diğer HTML öğelerinin, niteliklerinin, özelliklerinin ve bileşenlerinin davranışını dinler ve değiştirir.
+<br>             
+              RouterModuleve gibi birçok NgModule FormsModulekendi öznitelik direktiflerini tanımlar. En yaygın öznitelik direktifleri yandaki gibidir:              
+            </div>
+        </div>
+    </div>     
+    <div class="container">
+      <div class="row">
+          <div class="col-md-12 bg-dark text-center fs-5 text-white">
+             <h2>NgClass  İle sınıf ekleme ve kaldırma           </h2>
+             <div class="row border border-danger rounded m-3">
+      <code class="text-white fst-italic"><xmp>
+                <!-- bir özellik ile "özel" sınıfı açar/kapatır -->
+                <div [ngClass]="isSpecial ? 'special' : ">Bu özel bir div</div>
+              </xmp>
+      </code></div>
+      <h2>NgClass'ı farklı yöntemle kullanma</h2>
+1) <b>NgClass</b>'ı'bir yöntemle kullanmak için yöntemi bileşen sınıfına ekleyin.Aşağıdaki örnekte <b>setCurrentClasses()</b>, <b>currentClasses</b> özelliğini, diğer üç bileşen özelliğinin doğru veya yanlış durumuna göre üç sınıf ekleyen veya kaldıran bir nesneyle ayarlar.
+    Nesnenin her anahtarı bir CSS sınıf adıdır. Bir anahtar doğruysa, <b>ngClass</b>ı sınıfa ekler. Bir anahtar yanlışsa, <b>ngClass</b> sınıfı kaldırır.
+    <div class="row border border-danger rounded m-3"> <code class="text-white">
+        <xmp>
+            currentClasses: Record<string, boolean> = {};
+            setCurrentClasses() {
+            // CSS sınıfları: bileşen özelliklerinin mevcut durumuna göre ekledi/kaldırdı
+            this.currentClasses =  {
+            saveable: this.canSave,
+            modified: !this.isUnchanged,
+            special:  this.isSpecial};
+            }
+           </xmp>
+         </code> </div>
+        2) Şablonda, öğenin sınıflarını ayarlamak için <b>currentClasses</b>'a bağlanan <b> ngClass</b> özelliğini ekleyin:
+        <div class="row border border-danger rounded m-1"> <code class="text-white">
+          <xmp>
+            <div [ngClass]="currentClasses">Bu div başlangıçta kaydedilebilir, değiştirilemez ve özeldir. 
+            </div>
+             </xmp>
+           </code> </div>        
+           Bu kullanım durumu için, Angular, başlatma ve değişiklik durumunda sınıfları aktif hale getirir. Tam örnek, <b>setCurrentClasses()</b> başlangıçta <b>ngOnInit()</b>
+           ve bir düğmeye tıklamasıyla bağlantılı özellikleri değiştiğinde çağırır.
+
+      </div>
+
+      </div>
+  </div>    
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12 bg-secondary text-center fs-5 text-white">
+          <h2>NgStyle İle satır içi stilleri ayarlama</h2> 
+         <b> NgStyle </b> Bileşenin durumuna bağlı olarak birden çok satır içi stili aynı anda kullanılabilir.<br>
+        1) <b>NgStyle</b> öğesini kullanmak için bileşen sınıfına bir yöntem ekleyelim.<br>
+        Aşağıdaki örnekte <b>setCurrentStyles()</b> , <b>currentStyles</b> özelliğini, diğer üç bileşen özelliğinin durumuna göre üç stili tanımlayan bir nesneyle ayarlar.
+
+        <div class="row border border-white rounded m-1"> <code class="text-dark">
+          <xmp>
+            currentStyles: Record<string, string> = {};
+
+            setCurrentStyles() {
+            //CSS stilleri: bileşen özelliklerinin mevcut durumuna göre ayarlayabilirsiniz.
+            this.currentStyles = {
+            'font-style':  this.canSave      ? 'italic' : 'normal',
+            'font-weight': !this.isUnchanged ? 'bold'   : 'normal',
+            'font-size':   this.isSpecial    ? '24px'   : '12px'
+             };
+              }
+             </xmp>
+           </code> </div> 
+           Öğenin stillerini ayarlamak için  <b>currentStyles</b>'a bağlanan bir <b>ngStyle</b> özelliği ekleyelim.
+
+           <div class="row border border-white rounded m-1"> <code class="text-dark">
+            <xmp>
+              <div [ngStyle]="currentStyles">
+                Bu div ilk haliyle italik, normal kalınlıkta ve ekstra büyüklükte olarak gelir(24 piksel).
+              </div>
+               </xmp>
+             </code> </div> 
+        </div>
+
+    </div>
+</div>     
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 bg-dark text-center fs-5 text-white">
+         <h2>ngModel Özellikleri  ile görüntüleme ve güncelleme</h2>
+
+         Bir data özelliğini görüntülemek ve kullanıcı değişiklik yaptığında bu özelliği güncellemek için <b>NgModel</b> direktifini kullanırız.
+         1) <b>FormsModule</b> 'u içe aktaralım ve <b>NgModule</b>'ün içe aktarma listesine ekleyelim.
+         <div class="row border border-danger rounded m-3"> <code class="text-white">
+          <xmp>
+            import { FormsModule } from '@angular/forms'; // <--- JavaScriptti içine aktarın
+            /* . . . */
+            @NgModule({
+              /* . . . */
+
+              imports: [
+                BrowserModule,
+                FormsModule // <--- NgModule'ün aktarma listesine ekledik
+              ],
+              /* . . . */
+            })
+            export class AppModule { }
+             </xmp>
+           </code> </div> 
+           Bir HTML <b>form</b> öğesine bir <b>[(ngModel)]</b> bağlantı ekleyelim ve onu özelliğe eşit olarak ayarlayalım.
+           <div class="row border border-danger rounded m-3"> <code class="text-white">
+            <xmp>
+              <label for="example-ngModel">[(ngModel)]:</label>
+              <input [(ngModel)]="currentItem.name" id="example-ngModel">
+               </xmp>
+             </code> </div> 
+             Bu <b>[(ngModel)]</b> sözdizimi yalnızca bu veriye bağlı bir özelliği ayarlayabilir.
+             Yapılarımızı özelleştirmek için, özellik ve olay bağlamayı ayıran genişletilmiş formu yazabiliriz.
+             Özellik ve olay bağlamayı değişikliklere yanıt verecek şekilde ayarlamak için özellik bağlayıcı kullanalım. Aşağıdaki örnek, <code>input</code> değerini büyük harfe dönüştürür:
+             <div class="row border border-danger rounded m-3"> <code class="text-white">
+              <xmp>
+                <input [ngModel]="currentItem.name" (ngModelChange)="setUppercaseName($event)"
+                 id="example-uppercase">
+                 </xmp>
+               </code> </div> 
+
+                <img src="ngmod.gif" align="right">
+                Büyük harf versiyonu da dahil olmak üzere, <br> 
+                eylemdeki tüm varyasyonlar şunlardır:
+
+               
+      </div>
+
+  </div>
+</div>     
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 bg-secondary text-center fs-5 text-white">
+         <h2>NgModelve değer erişimcileri
+        </h2>
+        Direktif , <b> ControlValueAccessorNgModel</b> tarafından desteklenen bir öğe için çalışır . Angular, tüm temel HTML form öğeleri için değer erişimcileri sağlar. 
+        <b>[(ngModel)]</b> 'i biçimsiz bir yerleşik öğeye veya üçüncü taraf özel bir bileşene eklemek için bir değer erişimcisi yazmamız gerekir.
+      <h2>Yapısal structural directives</h2>
+
+
+      Yapısal directives HTML düzeninden sorumludur. Genellikle bağlı oldukları ana bilgisayar öğelerini ekleyerek, kaldırarak ve manipüle ederek DOM'nin yapısını yeniden şekillendirirler.
+        yaygın olarak kullanılan yapısal directiveslerden bazıları şunlardır. <br>
+        <b>NgIf</b> :Şablondan koşullu olarak alt görünümler oluşturur veya yok eder. <br>
+        <b>NgFor</b> :Listedeki her öğe için bir düğümü tekrarlayın. <br>
+        <b>NgSwitch</b> :Alternatif görünümler arasında geçiş yapan bir dizi direktif.
+    </div>
+
+  </div>
+</div>     
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 bg-dark text-center fs-5 text-white">
+         <h2> <b>NgIf</b> İle bir öğe ekleme veya çıkarma</h2>
+         <b>NgIf</b> bilgisayar öğesine bir direktif uygulayarak öğe ekler veya kaldırır.
+         <b>NgIf</b> false değeri olduğunda, Angular bir öğeyi ve onun torunlarını(ondan türtilmiş şeyleri) DOM'dan kaldırır
+         Angular daha sonra bileşenlerini temizler, bu da belleği ve kaynakları boşaltır.yani sistemi rahatlatır. <br>
+         Bir öğe eklemek veya kaldırmak için <b>*ngIf</b> öğesini aşağıdaki örnekte <b>isActive</b> gibi bir koşul ifadesine bağlayın.
+         <div class="row border border-danger rounded m-3"> <code class="text-white">
+          <xmp>
+            <app-item-detail *ngIf="isActive" [item]="item"></app-item-detail>
+             </xmp>
+           </code> </div> 
+           <b>isActive</b> ifadesi doğru bir değer döndürdüğünde, <b>NgIf</b> , DOM'a ItemDetailComponent ekler.
+           ifade yanlış olursa <b>NgIf</b> , ItemDetailComponent öğesini DOM'den kaldırır ve bileşeni ve tüm alt bileşenlerini yok eder.
+
+
+      </div>
+
+  </div>
+</div>     
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 bg-secondary text-center fs-5 text-white">
+         <h2>Null'a karşı koruma</h2>
+         Varsayılan olarak, <b>NgIf</b> boş bir değere bağlı bir öğenin görüntülenmesini engeller.
+         Bir >div'i korumak için <b>NgIf</b> kullanır.>div'in içine  <b>*ngIf="yourProperty" </b> ekler.
+         <div class="row border border-white rounded m-3"> <code class="text-dark">
+          <xmp>
+            <div *ngIf="currentCustomer">Hello, {{currentCustomer.name}}</div>
+             </xmp>
+           </code> </div> 
+           bu örnekte ise, özellik null olduğunda, Angular >div öğesini görüntülemez.Angular, null olduğu için nullCustomer öğesini görüntülemez.
+           <div class="row border border-white rounded m-3"> <code class="text-dark">
+            <xmp>
+              <div *ngIf="nullCustomer">Hello, <span>{{nullCustomer}}</span></div>
+               </xmp>
+             </code> </div> 
+
+
+      </div>
+
+  </div>
+</div>     
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 bg-dark text-center fs-5 text-white">
+        <h2> <b>NgFor</b> ile öğeleri listeleme</h2> 
+        Öğelerin bir listesini sunmak için <b>NgFor</b> direktifini kullanılır.
+        1)Angular'ın tek bir öğeyi nasıl oluşturduğunu belirleyen bir HTML bloğu tanımlayalım.
+        2)Öğeleri listelemek için, öğelerin kısa izin öğesini <b>*ngFor</b> 'a atayalım.
+        <div class="row border border-danger rounded m-3"> <code class="text-white">
+          <xmp>
+            <div *ngFor="let item of items">{{item.name}}</div>
+             </xmp>
+           </code> </div> 
+           "let item of item" dizesi, Angular'a aşağıdakileri yapması talimatını verir:
+           <li>Öğeler dizisindeki her öğeyi yerel öğe döngü değişkeninde saklar</li>
+           <li> Her öğeyi, her yineleme için şablonu HTML'de kullanılabilir hale getirin</li>
+           <li> "let item of items" ifadesini bilgisayar öğesinin etrafındaki bir  ng-template>e dönüştürür</li>
+           
+      
+      
+      
+          </div>
+
+
+  </div>
+</div>   
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 bg-secondary text-center fs-5 text-white">
+        <h2>DOM öğesi olmayan bir direktifi barındırma</h2> 
+        Angular ng-container>, Angular onu DOM'a yerleştirmediği için stiller veya düzen ile karışmayan bir gruplandırma öğesidir.
+        direktifi barındıracak tek bir öğe olmadığında ng-container>ı kullanırız.
+        İşte ng-container>ı kullanan bir koşullu paragraf örneği.
+        <div class="row border border-white rounded m-3"> <code class="text-dark">
+          <xmp>
+            <p>
+              köşeyi döndüm
+              <ng-container *ngIf="hero">
+                ve {{hero.name}}'ı gördüm.El salladım
+              </ng-container>
+              ve yoluma devam ettim.
+            </p>
+             </xmp>
+           </code> </div> 
+           <li> <b>FormsModule</b> 'den <b>ngModel</b> direktifini içe aktarır.</li>
+           <li>İlgili Angular modülünün içe aktarma bölümüne <b>FormsModule</b> 'u ekleyin.</li>
+           <li>Bir <b>option></b> öğesini koşullu olarak hariç tutmak için, <b>option></b> öğesini bir <b>ng-container></b> içine eklenir.</li>
+           
+      
+           
+      
+      
+          </div>
+
+
+  </div>
+</div>   
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 bg-dark text-center fs-5 text-white">
+        <div class="row border border-danger rounded m-3"> <code class="text-white">
+          <xmp>
+            <div>
+              Pick your favorite hero
+              (<label><input type="checkbox" checked (change)="showSad = !showSad">show sad</label>)
+            </div>
+            <select [(ngModel)]="hero">
+              <ng-container *ngFor="let h of heroes">
+                <ng-container *ngIf="showSad || h.emotion !== 'sad'">
+                  <option [ngValue]="h">{{h.name}} ({{h.emotion}})</option>
+                </ng-container>
+              </ng-container>
+            </select>
+             </xmp>
+           </code> </div> 
+           <img src="option.gif" alt="">
+      </div>
+
+  </div>
+</div>   
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 bg-secondary text-center fs-5 text-white">
+         
+      </div>
+
+  </div>
+</div>   
+  </body>
+</html>

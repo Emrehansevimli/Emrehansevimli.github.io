@@ -1,0 +1,24 @@
+
+body {
+    background-image: url("3.jpg");
+    background-repeat:no-repeat;
+    background-color: black;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.container {
+    border-radius: 5px;  
+    padding: 10px;
+}
+.col-md-12{
+    border-radius: 5px;
+}
+.table tbody th{
+    max-width:100px;
+    padding:13px 32px;
+    text-align:left
+}
+.td{
+    font-weight:400;
+    padding:8px 30px
+}
